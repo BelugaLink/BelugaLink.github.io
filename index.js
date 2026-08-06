@@ -76,3 +76,5 @@ function quizCek () {
 
 showQuiz()
 doc.submitBtn.addEventListener('click', quizCek);
+
+//mauja tes ma push bisa atau nda

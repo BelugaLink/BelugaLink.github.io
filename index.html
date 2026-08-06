@@ -1,163 +1,23 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Kecil-Kecilan</title>
-    <style>
-        /* 1. Reset & Font Utama */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        /* 2. Layout Background Utama */
-        body {
-            background-color: #f4f6f8;
-            color: #1a1d20;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Header Judul Utama */
-        body > h2:first-of-type {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #6c757d;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        /* 3. Kartu Kuis Utama (Wrapper) */
-        .quiz-card {
-            background: #ffffff;
-            width: 100%;
-            max-width: 420px;
-            border-radius: 16px;
-            padding: 32px 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Pertanyaan Kuis */
-        #quiz {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #212529;
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        /* 4. Elemen Input Teks */
-        #inputUser {
-            width: 100%;
-            background-color: #f8f9fa;
-            border: 1.5px solid #e9ecef;
-            padding: 14px 16px;
-            font-size: 1rem;
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.2s ease;
-            text-align: center;
-            color: #212529;
-        }
-
-        #inputUser::placeholder {
-            color: #adb5bd;
-        }
-
-        /* Efek Focus Input */
-        #inputUser:focus {
-            border-color: #3b82f6;
-            background-color: #ffffff;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
-        }
-
-        /* 5. Tombol Submit */
-        #submitBtn {
-            width: 100%;
-            background-color: #2563eb;
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            letter-spacing: 0.5px;
-        }
-
-        #submitBtn:hover {
-            background-color: #1d4ed8;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-        }
-
-        #submitBtn:active {
-            transform: scale(0.98);
-        }
-
-        /* 6. Kotak Penampung Hasil (Result) */
-        #result {
-            width: 100%;
-            max-width: 420px;
-            margin-top: 16px;
-            padding: 14px;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: none; /* Sembunyikan jika belum ada isi */
-        }
-
-        /* Class bantuan yang bisa kamu panggil via index.js */
-        #result.correct {
-            display: block;
-            background-color: #d1fae5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
-        }
-
-        #result.wrong {
-            display: block;
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fca5a5;
-        }
-        /* Style untuk kondisi input tidak valid / kosong */
-        #result.invalid {
-            display: block;
-            background-color: #fffbebf5; /* Kuning soft */
-            color: #b45309;             /* Teks oranye gelap */
-            border: 1px solid #fcd34d;  /* Border kuning emas */
-        }
-
-
-    </style>
+    <title>quiz kecil kecilan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h2>Quiz App</h2>
-
-    <main class="quiz-card">
-        <div id="quiz">Pertanyaan kuis akan muncul di sini...</div>
-        <input id="inputUser" type="text" placeholder="Ketik jawabanmu..." autocomplete="off">
-        <button id="submitBtn">Kirim Jawaban</button>
-    </main>
-
-    <div id="result"></div>
-
-    <script src="index.js"></script>
+    <button id="matematika">Matematika</button>
+    <button id="javascript">Programing Javascipt</button>
+    <h2>quiz IMG</h2>
+    <div id="scor" class="hidden">skor</div>
+    <div id="quizContainer" class="hidden">
+        <div id="categoryTitle"></div>
+        <div id="questionPlace"></div>
+        <input id="inputUser" type="text">
+        <button id="submitBtn">submit</button>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

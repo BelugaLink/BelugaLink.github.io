@@ -52,7 +52,7 @@ function cekIndex() {
 }
 
 function showQuiz () {
-    doc.quiz.innerHTML = quizData[index].question
+    doc.quiz.innerHTML = `No.${index+1} ${quizData[index].question}`
 }
 
 function quizCek () {

@@ -43,38 +43,74 @@ function clearInputF (rawInput) {
 };
 
 let index = 0
+let benar = 0
 
-function cekIndex() {
-    if (index >= quizData.length) {
+function selesaiQuiz() {
         doc.submitBtn.style.display = 'none'
-        doc.quiz.innerHTML = 'quiz sudah selesai'
+        doc.inputUser.style.display = 'none'
+        doc.result.style.display = 'none'
+        doc.quiz.innerHTML = `Skor: ${benar}/${quizData.length}`
     }
-}
 
 function showQuiz () {
+    if (index >= quizData.length) {
+        selesaiQuiz()
+        return
+    }
     doc.quiz.innerHTML = `No.${index+1} ${quizData[index].question}`
+}
+
+function notifikasi(status, variabel) {
+    if (status == 'benar') {
+        variabel.className = 'correct'
+        variabel.innerHTML = 'Jawaban benar!!';
+    setTimeout(() => {
+        variabel.innerHTML = '';
+        variabel.className = ''
+        }, 1250);
+    }
+        else if (status == 'invalid') {
+            variabel.className = 'invalid'
+            variabel.innerHTML = 'Masukkan Nilai Yang valid';
+            setTimeout(() => {
+            variabel.innerHTML = '';
+            variabel.className = ''
+            }, 1250);
+
+    }
+            else {
+                variabel.className = 'wrong'
+                variabel.innerHTML = 'Jawaban salah!!';
+                setTimeout(() => {
+                variabel.innerHTML = '';
+                variabel.className = ''
+                }, 1250);
+    }
+
+    return variabel
 }
 
 function quizCek () {
     const clearInput = clearInputF(doc.inputUser.value);
     const result = doc.result;
     if(clearInput == false){
-        result.innerHTML = 'Masukkan Nilai Yang valid';
+        notifikasi('invalid', result)
         return
     };
     if(clearInput == quizData[index].answer) {
-        result.innerHTML = 'Jawaban benar!!';
+        notifikasi('benar', result)
         doc.inputUser.value = ''
-        index++ 
-        cekIndex()
-        showQuiz()
+        benar++
+        index++
+        showQuiz() 
         return
     }else {
-        result.innerHTML = 'Jawaban Salah!!';
+        notifikasi('salah', result)
+        doc.inputUser.value = ''
+        index++
+        showQuiz()
     }
 };
 
 showQuiz()
 doc.submitBtn.addEventListener('click', quizCek);
-
-//mauja tes ma push bisa atau nda

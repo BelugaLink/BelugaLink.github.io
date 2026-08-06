@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz kecil kecilan</title>
+    <style>
+    /* 1. Reset Dasar & Font */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* 2. Layout Background Utama */
+    body {
+        background-color: #f0f2f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Header Judul Kuis Utama */
+    body > h2:first-of-type {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #65676b;
+        margin-bottom: 10px;
+    }
+
+    /* 3. Wadah Kuis (Quiz Card) */
+    /* Membuat semua elemen di dalam body menyatu dalam satu kotak rapi */
+    body > h2:nth-of-type(2), 
+    #inputUser, 
+    #submitBtn, 
+    #result {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* Pertanyaan Kuis */
+    body > h2:nth-of-type(2) {
+        background-color: #ffffff;
+        color: #1c1e21;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 30px 25px 20px 25px;
+        border-radius: 12px 12px 0 0;
+        text-align: center;
+        border-bottom: 1px solid #e4e6eb;
+    }
+
+    /* 4. Elemen Input Teks */
+    #inputUser {
+        background-color: #ffffff;
+        border: 2px solid #e4e6eb;
+        padding: 15px;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+        text-align: center;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    /* Efek saat kolom input diklik oleh user */
+    #inputUser:focus {
+        border-color: #007bff;
+        background-color: #f8f9fa;
+    }
+
+    /* 5. Tombol Submit */
+    #submitBtn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 0 0 12px 12px;
+        transition: background-color 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Efek saat tombol diarahkan kursor (hover) */
+    #submitBtn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Efek saat tombol ditekan */
+    #submitBtn:active {
+        transform: scale(0.98);
+    }
+
+    /* 6. Kotak Penampung Hasil (Result) */
+    #result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+</style>
+
+</head>
+<body>
+    <h2>quiz</h2>
+    <div id="quiz"></div>
+    <input id="inputUser" type="text">
+    <button id="submitBtn">submit</button>
+    <div id="result"></div>
+    <script src="index.js"></script>
+</body>
+</html>

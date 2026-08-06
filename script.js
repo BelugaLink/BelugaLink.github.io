@@ -36,20 +36,31 @@ const quizData = [
 let categoryMapel;
 let index = 0;
 let benar = 0;
-const selectMapel = (mapel) => {return quizData[mapel].category}
+
 doc.matematika.addEventListener('click', () => {
+    let iyaTidak = confirm('Apakah anda yakin ingin masuk mapel ini?')
+    if (iyaTidak) {
     doc.scor.classList.add('hidden');
-    doc.categoryTitle.textContent = selectMapel(0)
+    doc.categoryTitle.textContent = quizData[1].category
     categoryMapel = 0
+    doc.matematika.classList.add('hidden')
+    doc.javascript.classList.add('hidden')
     showQuiz()
     doc.quizContainer.classList.remove('hidden')
+    }
 })
+
 doc.javascript.addEventListener('click', () => {
+    let iyaTidak = confirm('Apakah anda yakin ingin masuk mapel ini?')
+    if (iyaTidak) {
     doc.scor.classList.add('hidden');
-    doc.categoryTitle.textContent = selectMapel(1)
+    doc.categoryTitle.textContent = quizData[1].category
     categoryMapel = 1
+    doc.matematika.classList.add('hidden')
+    doc.javascript.classList.add('hidden')
     doc.quizContainer.classList.remove('hidden')
     showQuiz()
+    }
 })
 function clearInputF (rawInput) {
     let clearInput;
@@ -73,6 +84,7 @@ function showQuiz () {
     if (index >= quizData[categoryMapel].questions.length) {
         selesaiQuiz()
         return
+        doc.javascript.classList.add('hidden')
     }
     doc.questionPlace.innerHTML = `No.${index+1} ${quizData[categoryMapel].questions[index].question}`
 }

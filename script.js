@@ -37,31 +37,25 @@ let categoryMapel;
 let index = 0;
 let benar = 0;
 
-doc.matematika.addEventListener('click', () => {
+function selectMapel(mapel) {
     let iyaTidak = confirm('Apakah anda yakin ingin masuk mapel ini?')
     if (iyaTidak) {
-    doc.scor.classList.add('hidden');
-    doc.categoryTitle.textContent = quizData[1].category
-    categoryMapel = 0
-    doc.matematika.classList.add('hidden')
-    doc.javascript.classList.add('hidden')
-    showQuiz()
-    doc.quizContainer.classList.remove('hidden')
+        doc.scor.classList.add('hidden');
+        doc.categoryTitle.textContent = quizData[mapel].category
+        categoryMapel = mapel
+        doc.matematika.classList.add('hidden')
+        doc.javascript.classList.add('hidden')
+        doc.quizContainer.classList.remove('hidden')
+        showQuiz()
     }
+}
+doc.matematika.addEventListener('click', () => {
+    selectMapel(0)
+})
+doc.javascript.addEventListener('click', () => {
+    selectMapel(1)
 })
 
-doc.javascript.addEventListener('click', () => {
-    let iyaTidak = confirm('Apakah anda yakin ingin masuk mapel ini?')
-    if (iyaTidak) {
-    doc.scor.classList.add('hidden');
-    doc.categoryTitle.textContent = quizData[1].category
-    categoryMapel = 1
-    doc.matematika.classList.add('hidden')
-    doc.javascript.classList.add('hidden')
-    doc.quizContainer.classList.remove('hidden')
-    showQuiz()
-    }
-})
 function clearInputF (rawInput) {
     let clearInput;
     if(typeof rawInput !== 'string') {
@@ -78,13 +72,14 @@ function selesaiQuiz() {
     Anda telah menyelesaikan quiz dengan
     Skor: ${benar}/${quizData[categoryMapel].questions.length}`
     categoryMapel = null
-    index = 0;
-    benar = 0
+    index = benar = 0
 }
 
 function showQuiz () {
     if (index >= quizData[categoryMapel].questions.length) {
-        selesaiQuiz()
+        setTimeout(() => {
+            selesaiQuiz()
+        }, 850);
         return
         doc.javascript.classList.add('hidden')
     }
@@ -131,8 +126,7 @@ function quizCek () {
     if(clearInput == quizData[categoryMapel].questions[index].answer) {
         notifikasi('benar', result)
         doc.inputUser.value = ''
-        benar++
-        index++
+        benar = index += 1
         showQuiz() 
         return
     }else {

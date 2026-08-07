@@ -74,7 +74,9 @@ function clearInputF (rawInput) {
 function selesaiQuiz() {
     doc.quizContainer.classList.add('hidden');
     doc.scor.classList.remove('hidden')
-    doc.scor.textContent = `Skor: ${benar}/${quizData[categoryMapel].questions.length}`
+    doc.scor.textContent = `
+    Anda telah menyelesaikan quiz dengan
+    Skor: ${benar}/${quizData[categoryMapel].questions.length}`
     categoryMapel = null
     index = 0;
     benar = 0
@@ -141,3 +143,8 @@ function quizCek () {
     }
 };
 doc.submitBtn.addEventListener('click', quizCek);
+doc.inputUser.addEventListener('keydown', function(event){
+    if (event.key === 'Enter') {
+        quizCek()
+    }
+})

@@ -1,0 +1,116 @@
+/* Reset Dasar & Pengaturan Font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Latar Belakang Halaman Utama */
+html {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mengubah body menjadi Kartu / Container Utama */
+body {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Input mengambil sisa ruang, button menyesuaikan teks */
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  margin: 20px;
+}
+
+/* Styling Input */
+#inputTask {
+  grid-column: 1;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+#inputTask:focus {
+  background-color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* Styling Tombol Submit */
+#submitBtn {
+  grid-column: 2;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #6366f1;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+  text-transform: capitalize;
+}
+
+#submitBtn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+}
+
+#submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Container Daftar Tugas (Di Bawah Input & Button) */
+#taskContainer {
+  grid-column: 1 / -1; /* Mengambil lebar penuh (kolom 1 sampai akhir) */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+/* Styling Elemen <h> (Judul konten di dalamnya) */
+h2 {
+  grid-column: 1 / -1; /* Agar mengambil lebar penuh di layout Grid */
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+/* Styling Elemen <p> (Tugas Baru) */
+p {
+  background-color: #ffffff;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 500;
+  word-break: break-word;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}

@@ -3,23 +3,35 @@
 const doc = {
     inputTask: document.getElementById("inputTask"),
     submitBtn: document.getElementById("submitBtn"),
-    taskContainer: document.getElementById("taskContainer"),
+    taskContainer: document.getElementById("taskContainer")
 }
 let taskList = [
     {tugas: "Tugas bindo"},
     {tugas: "Tugas binggris"},
     {tugas: "Tugas kk"}
-]
-function rendering () {
-    taskList.forEach((item, indeks) => {
-        doc.taskContainer.innerHTML += `
-        <p>${indeks + 1}. ${item.tugas}</p>
-        `
+];
+function deleteTask (indeks) {
+    taskList.splice(indeks, 1);
+    rendering()
+}
+function creatDeleteTask () {
+    const deleteBtns = document.querySelectorAll(".deleteBtn")
+    deleteBtns.forEach((button, indeks) => {
+        button.addEventListener('click', () => {deleteTask(indeks)})
     })
 }
-function submitTask(task) {
-    //membersihkan task container sebelum di render ulang
+
+function rendering () {
     doc.taskContainer.innerHTML = ''
+    taskList.forEach((item, indeks) => {
+        doc.taskContainer.innerHTML += `
+        <p>${indeks + 1}. ${item.tugas}</p>j
+        <button class="deleteBtn">Delete</button>
+        `
+    })
+    creatDeleteTask()
+} 
+function submitTask(task) {
     if (typeof task !== 'string' || task === '') {
         doc.taskContainer.innerHTML = '<p>Masukkan nilai yang valid</p>'
         return

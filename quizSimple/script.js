@@ -148,7 +148,7 @@ function ulasan(benar) {
     } else if(benar > 1) {
         return "belajar moko dulu"
     } else {
-        return "orang asbun"
+        return ""
     }
 }
 function quizCek () {

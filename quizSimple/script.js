@@ -101,8 +101,7 @@ function selesaiQuiz() {
     clearInterval(interval)
     doc.quizContainer.classList.add('hidden');
     doc.scor.classList.remove('hidden')
-    doc.scor.textContent = `
-    Anda telah menyelesaikan quiz dengan
+    doc.scor.textContent = `Anda telah menyelesaikan quiz dengan
     Skor: ${benar}/${quizData[categoryMapel].questions.length} Ulasan: ${ulasan(benar)}`
     categoryMapel = null
     index = benar = 0

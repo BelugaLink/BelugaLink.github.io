@@ -1,139 +1,152 @@
-/* Reset Dasar & Pengaturan Font */
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset dasar */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Latar Belakang Halaman Utama */
-html {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Mengubah body menjadi Kartu / Container Utama */
 body {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Input mengambil sisa ruang, button menyesuaikan teks */
-  gap: 12px;
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-  margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Styling Input */
+/* Judul Utama */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Input Task */
 #inputTask {
-  grid-column: 1;
-  padding: 12px 16px;
-  font-size: 0.95rem;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 10px;
-  outline: none;
-  transition: all 0.2s ease;
-  background-color: #f8fafc;
-  color: #0f172a;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 #inputTask:focus {
-  background-color: #ffffff;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-/* Styling Tombol Submit */
+/* Tombol Submit */
 #submitBtn {
-  grid-column: 2;
-  padding: 12px 20px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: #6366f1;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
-  text-transform: capitalize;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 #submitBtn:hover {
-  background-color: #4f46e5;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
 }
 
-#submitBtn:active {
-  transform: translateY(0);
-}
-
-/* Container Daftar Tugas (Di Bawah Input & Button) */
+/* Container Task List */
 #taskContainer {
-  grid-column: 1 / -1; /* Mengambil lebar penuh (kolom 1 sampai akhir) */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 12px;
-}
-/* Styling Elemen <h> (Judul konten di dalamnya) */
-h2 {
-  grid-column: 1 / -1; /* Agar mengambil lebar penuh di layout Grid */
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Styling Elemen <p> (Tugas Baru) */
-p {
-  background-color: #ffffff;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  color: #334155;
-  font-size: 0.95rem;
-  font-weight: 500;
-  word-break: break-word;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Sembunyikan container jika kosong */
+#taskContainer:empty {
+    display: none;
 }
 
-p:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
-  transform: translateY(-1px);
+/* Teks Task / Pesan Error */
+#taskContainer p {
+    flex: 1 1 100%;
+    font-weight: 600;
+    color: #2c3e50;
+    word-break: break-word;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
 }
+
+/* Task pertama tidak menggunakan border atas */
+#taskContainer p:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+/* Tombol Delete & Edit */
+.deleteBtn,
+.editBtn {
+    flex: 1;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+}
+
+/* Styling Khusus Tombol Delete */
 .deleteBtn {
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: #ef4444; /* Warna merah modern */
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+    color: #e74c3c;
+    border-color: #fce8e6;
 }
 
 .deleteBtn:hover {
-  background-color: #dc2626; /* Merah sedikit lebih gelap saat dikursorkan */
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+    background-color: #e74c3c;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
 }
 
-.deleteBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+/* Styling Khusus Tombol Edit */
+.editBtn {
+    color: #f39c12;
+    border-color: #fef5e7;
+}
+
+.editBtn:hover {
+    background-color: #f39c12;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(243, 156, 18) 0.3;
 }

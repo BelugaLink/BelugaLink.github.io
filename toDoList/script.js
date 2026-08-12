@@ -28,6 +28,9 @@ function editTask (indeks) {
         alert('Tidak boleh kosong')
         return
     }
+    if (!newValue) {
+        return
+    }
     taskList[indeks].tugas = newValue
     rendering()
 }

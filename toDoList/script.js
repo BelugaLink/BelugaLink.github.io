@@ -5,12 +5,13 @@ const doc = {
     submitBtn: document.getElementById("submitBtn"),
     taskContainer: document.getElementById("taskContainer")
 }
-let taskList = [
-    {tugas: "Tugas bindo"},
-    {tugas: "Tugas binggris"},
-    {tugas: "Tugas kk"}
-];
+let taskList = [];
+
 function deleteTask (indeks) {
+    let yesNo = confirm('Apakah anda yakin ingin menghapus tugas ini?')
+    if (!yesNo) {
+        return
+    }
     taskList.splice(indeks, 1);
     rendering()
 }
@@ -21,17 +22,36 @@ function creatDeleteTask () {
     })
 }
 
+function editTask (indeks) {
+    let newValue = prompt('Masukkan isi baru')
+    if (newValue == '') {
+        alert('Tidak boleh kosong')
+        return
+    }
+    taskList[indeks].tugas = newValue
+    rendering()
+}
+
+function createEditTask () {
+    const editBtns = document.querySelectorAll(".editBtn")
+    editBtns.forEach((button, indeks) => {
+        button.addEventListener('click', () => {editTask(indeks)})
+    })
+}
+
 function rendering () {
     doc.taskContainer.innerHTML = ''
     taskList.forEach((item, indeks) => {
         doc.taskContainer.innerHTML += `
-        <p>${indeks + 1}. ${item.tugas}</p>j
-        <button class="deleteBtn">Delete</button>
+        <p>${indeks + 1}. ${item.tugas}</p>
+        <button class="deleteBtn">Delete</button> <button class="editBtn">Edit</button>
         `
     })
     creatDeleteTask()
+    createEditTask()
 } 
 function submitTask(task) {
+    doc.inputTask.value = ''
     if (typeof task !== 'string' || task === '') {
         doc.taskContainer.innerHTML = '<p>Masukkan nilai yang valid</p>'
         return

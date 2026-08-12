@@ -1,0 +1,66 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Judul Utama */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Container List Projek */
+#adalah {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Styling Link / Tombol Projek */
+#adalah a {
+    display: block;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+/* Efek Hover saat kursor diarahkan ke tombol */
+#adalah a:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Sembunyikan elemen <br> dari JS agar tata letak CSS Flexbox bekerja sempurna */
+#adalah br {
+    display: none;
+}

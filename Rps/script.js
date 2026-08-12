@@ -26,11 +26,20 @@ function computer () {
 function start (player) {
     const computerMove = computer()
     if (computerMove == pattern[player]) {
-        return doc.result.textContent = "Kamu menang computer: " + computerMove
+        return doc.result.innerHTML = 
+        `Kamu menang!<br>
+        computer: ${computerMove}<br>
+        kamu: ${player}`
     }else if (player == pattern[computerMove]) {
-        return doc.result.textContent = "Kamu kalah computer: " + computerMove
+        return doc.result.innerHTML = 
+        `Kamu kalah!<br>
+        computer: ${computerMove}<br>
+        kamu: ${player}`
     }else {
-        return doc.result.textContent = "kamu seri computer: " + computerMove
+        return doc.result.innerHTML = 
+        `Kamu seri!<br>
+        computer: ${computerMove}<br>
+        kamu: ${player}`
     }
 }
 doc.rock.addEventListener('click', () => {

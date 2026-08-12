@@ -36,7 +36,7 @@ const quizData = [
 ];
 let time = {
     detik: 0,
-    menit: 0,
+    menit: 1,
     jam: 0
 }
 let categoryMapel;
@@ -45,14 +45,16 @@ let benar = 0;
 let interval;
 function startTimer () {
     interval = setInterval(() => {
-    time.detik++
-    if(time.detik === 60) {
-        time.detik = 0
-        time.menit ++
+    time.detik --
+        if (time.detik == 0 && time.menit == 0) {
+        alert('waktu kamu habis')
+        clearInterval(interval)
+        selesaiQuiz()
+        return
     }
-    if(time.menit === 60) {
-        time.menit = 0
-        time.jam ++
+    if(time.detik <= 0) {
+        time.menit --
+        time.detik = 59
     }
     formatTimer()
     }, 1000)
@@ -101,7 +103,7 @@ function selesaiQuiz() {
     doc.scor.classList.remove('hidden')
     doc.scor.textContent = `
     Anda telah menyelesaikan quiz dengan
-    Skor: ${benar}/${quizData[categoryMapel].questions.length} Waktu: ${`${formatTimer(true)}`} Ulasan: ${ulasan(benar)}`
+    Skor: ${benar}/${quizData[categoryMapel].questions.length} Ulasan: ${ulasan(benar)}`
     categoryMapel = null
     index = benar = 0
 }
@@ -148,7 +150,7 @@ function ulasan(benar) {
     } else if(benar > 1) {
         return "belajar moko dulu"
     } else {
-        return ""
+        return "bot"
     }
 }
 function quizCek () {

@@ -1,0 +1,93 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Code:wght@400;600&display=swap');
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+/* Teks Kalimat yang Harus Diketik (<h3 id="tampilKata">) */
+#tampilKata {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Input Tempat Pengguna Ketik (<input id="inputUser">) */
+#inputUser {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: 'Fira Code', monospace; /* Font monospace agar presisi saat mengetik */
+    font-size: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#inputUser:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Visualisasi Karakter Hasil Ketikan (<h3 id="response">) */
+#response {
+    width: 100%;
+    max-width: 500px;
+    min-height: 50px;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.05rem;
+    word-break: break-all;
+    letter-spacing: 1px;
+}
+
+/* Sembunyikan elemen response jika belum ada ketikan */
+#response:empty {
+    display: none;
+}
+
+/* Timer Display (<p id="timerContainer">) */
+#timerContainer {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #ffffff;
+    color: #e74c3c;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 20px;
+    border: 1px solid #fce8e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}

@@ -1,0 +1,124 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+/* Judul Utama (<h2>Cek Cuaca</h2>) */
+body > h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Input Kota (<input id="input">) */
+#input {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Tombol Cek (<button id="tombol">) */
+#tombol {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+/* Efek Hover Tombol Cek */
+#tombol:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(52, 152, 219, 0.35);
+    border-color: #3498db;
+}
+
+#tombol:active {
+    transform: translateY(-1px);
+}
+
+/* Container Tampilan Hasil Cuaca (<div id="container">) */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    min-height: 200px;
+    padding: 25px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+/* Mengatur <h2> di dalam container agar rapi dan tidak terlalu besar */
+#container h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Menonjolkan H2 pertama (Nama Kota) agar seperti header kartu */
+#container h2:first-child {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+/* Sembunyikan tag <br> bawaan JS agar jarak antar baris diatur via flex gap */
+#container br {
+    display: none;
+}

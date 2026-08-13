@@ -1,0 +1,96 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Judul Utama */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* Container Papan Permainan / Hasil Kemenangan */
+#container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: capitalize;
+}
+
+/* Sembunyikan elemen <br> dari JS agar Flexbox/Grid berfungsi rapi */
+#container br {
+    display: none;
+}
+
+/* Mengubah container tombol menjadi tampilan grid 3x3 saat papan di-render */
+#container:has(button) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 320px;
+}
+
+/* Styling Tombol Kotak Tic-Tac-Toe */
+#container button {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Menyembunyikan tanda titik bawaan dari teks "${papan[indeks]}." saat nilai masih kosong */
+    color: transparent; 
+}
+
+/* Sembunyikan warna transparan jika tombol sudah berisi X atau O */
+#container button:not(:empty) {
+    color: #2c3e50;
+}
+
+/* Efek Hover untuk kotak yang bisa diklik */
+#container button:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Efek Tekan saat diklik */
+#container button:active {
+    transform: translateY(-1px);
+}

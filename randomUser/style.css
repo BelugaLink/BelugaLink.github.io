@@ -1,0 +1,102 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+/* Judul Utama */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Container Tampilan User (<h2 id="container">) */
+#container {
+    display: flex;
+    flex-direction: column; /* Menyusun elemen secara vertikal dari atas ke bawah */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    min-height: 250px;
+    padding: 25px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* Memastikan setiap <br> memaksa teks berikutnya pindah ke baris baru */
+#container br {
+    display: block;
+    content: "";
+    margin-bottom: 2px;
+}
+
+/* Foto Profil (Ditaruh Paling Atas Menggunakan 'order: -1') */
+#container img {
+    order: -1; /* Memindahkan gambar ke posisi teratas dalam flex container */
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px; /* Jarak bawah gambar ke teks nama */
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Tombol Random User (<button id="tombol">) */
+#tombol {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    padding: 14px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+}
+
+/* Efek Hover Tombol */
+#tombol:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(52, 152, 219, 0.35);
+    border-color: #3498db;
+}
+
+#tombol:active {
+    transform: translateY(-1px);
+}

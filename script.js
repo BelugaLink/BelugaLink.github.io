@@ -2,7 +2,7 @@ const projekContainer = document.getElementById('adalah')
 
 const listProjek = [
     {namaProjek: 'Tic Tac Toe Vs Bot', path: '/Tictac/index.html'},
-    {namaProjek: 'Tic Tac Toe Vs Orang', path: '/TictacVS/index.html'},
+    {namaProjek: 'Tic Tac Toe Vs Orang', path: '/TicTacVS/index.html'},
     {namaProjek: 'Quiz', path: '/quizSimple/index.html'},
     {namaProjek: 'Batu Gunting Kertas', path: '/Rps/index.html'},
     {namaProjek: 'To do list', path: '/toDoList/index.html'},

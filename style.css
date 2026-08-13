@@ -25,11 +25,11 @@ body {
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 
 /* ==========================================
-   HERO BANNER
+   HERO SECTION
    ========================================== */
 .hero {
     text-align: center;
@@ -61,12 +61,10 @@ body {
 .hero .subtitle {
     font-size: 0.95rem;
     color: #64748b;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 /* ==========================================
-   ABOUT US & STATS
+   ABOUT US SECTION
    ========================================== */
 .about-section {
     background: #ffffff;
@@ -79,16 +77,61 @@ body {
 .about-section h2 {
     font-size: 1.3rem;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.about-section p {
+.about-desc {
     font-size: 0.95rem;
     color: #475569;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
+/* List Member */
+.member-container {
+    margin-bottom: 24px;
+}
+
+.member-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.member-card {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f8fafc;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.member-card:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52, 152, 219, 0.3);
+}
+
+/* Quick Stats */
 .stats-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,7 +157,7 @@ body {
 }
 
 /* ==========================================
-   PROJEK GRID
+   PROJEK GRID SECTION
    ========================================== */
 .projek-section h2 {
     font-size: 1.3rem;
@@ -124,7 +167,7 @@ body {
 
 #adalah {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
     width: 100%;
 }
@@ -133,10 +176,11 @@ body {
     display: none;
 }
 
+/* Kartu Projek */
 .card-projek {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 20px;
     background-color: #ffffff;
     color: #2c3e50;
@@ -153,16 +197,18 @@ body {
     border-color: #3498db;
 }
 
+/* Judul Projek dalam Kartu */
 .card-title {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: #2c3e50;
+    margin-bottom: 6px;
 }
 
+/* Deskripsi Projek dalam Kartu */
 .card-desc {
     font-size: 0.85rem;
     color: #64748b;
-    margin-top: 6px;
     line-height: 1.4;
 }
 
@@ -181,7 +227,7 @@ footer span {
     font-weight: 700;
 }
 
-/* Responsive adjustment untuk layar kecil */
+/* Responsive adjustment untuk layar HP */
 @media (max-width: 600px) {
     .stats-container {
         grid-template-columns: 1fr;

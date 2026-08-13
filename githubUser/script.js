@@ -33,3 +33,9 @@ async function searchUsers() {
     container.innerHTML = '<h1>Loading....</h1>'
     searchUsers()
 })
+inputUser.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        container.innerHTML = '<h1>Loading....</h1>'
+    searchUsers()
+    }
+})

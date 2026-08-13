@@ -2,6 +2,7 @@ const projekContainer = document.getElementById('adalah');
 const totalProjekElem = document.getElementById('totalProjek');
 
 const listProjek = [
+    { namaProjek: 'Cek cuaca', path: '/cuaca/index.html', desc: 'Cek suhu, kelembapan udara dan kecepatangan angin suatu kota' },
     { namaProjek: 'Cari user github', path: '/githubUser/index.html', desc: 'Pencarian profil GitHub via API' },
     { namaProjek: 'Latihan API', path: '/randomUser/index.html', desc: 'Generate data pengguna secara acak' },
     { namaProjek: 'Typing Test', path: '/typing/index.html', desc: 'Uji ketepatan mengetik dalam kurun waktu' },
